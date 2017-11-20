@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Home from '../../BodyComponents/Home';
 import About from '../../BodyComponents/About';
@@ -11,13 +11,13 @@ export default class BodyRoutes extends React.Component {
 
         return (
 
-            <BrowserRouter>
+            <HashRouter>
                 <Switch>
                     <Route exact={true} path="/" component={Home} />
                     <Route exact={true} path="/about" component={About} />
                     <Route exact={true} path="/contact" component={Contact} />
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
 
         );
 
