@@ -1,6 +1,7 @@
 {
   "name": "github-pages-react-ts",
   "version": "0.1.0",
+  "homepage": "https://mcappleman.github.io/github-pages-react-ts",
   "private": true,
   "dependencies": {
     "@types/bootstrap": "^3.3.36",

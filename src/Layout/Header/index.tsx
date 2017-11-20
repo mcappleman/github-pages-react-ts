@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-export interface HeaderState {
+interface HeaderState {
   isOpen: boolean;
 }
 
@@ -12,7 +12,9 @@ export default class Header extends React.Component<{}, HeaderState> {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    this.state = { isOpen: false };
+    this.state = {
+      isOpen: false
+    };
 
   }
 
@@ -27,15 +29,18 @@ export default class Header extends React.Component<{}, HeaderState> {
     return (
       <div>
         <Navbar className="navbar-dark" color="dark" expand="sm">
-          <NavbarBrand href="/">GitHub React</NavbarBrand>
+          <NavbarBrand href="/">Application Name</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar={true}>
             <Nav className="ml-auto" navbar={true}>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink active={window.location.pathname === '/'} href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+                <NavLink active={window.location.pathname === '/about/'} href="/about/">About</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink active={window.location.pathname === '/contact/'} href="/contact/">Contact Us</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
