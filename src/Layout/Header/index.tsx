@@ -26,7 +26,7 @@ export default class Header extends React.Component<{}, HeaderState> {
 
     return (
       <div>
-        <Navbar color="dark" dark={true} expand="sm">
+        <Navbar className="navbar-dark" color="dark" expand="sm">
           <NavbarBrand href="/">GitHub React</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar={true}>
